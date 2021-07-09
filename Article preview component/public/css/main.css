@@ -1,0 +1,273 @@
+:root {
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font: 1.3rem "Manrope", sans-serif;
+  line-height: 1.5;
+  background-color: #ecf2f8;
+  display: grid;
+  place-content: center;
+}
+
+h1,
+h2 {
+  font-size: 1.6rem;
+}
+
+.icon-container {
+  display: inline-grid;
+  place-content: center;
+  border-radius: 50%;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 200ms ease 50ms;
+}
+.icon-container--primary {
+  background-color: #ecf2f8;
+}
+.icon-container--primary:hover, .icon-container--primary:active {
+  /* :active for touch interaction */
+  background-color: #48556a;
+}
+.icon-container--primary:hover .icon--primary, .icon-container--primary:active .icon--primary {
+  /* :active for touch interaction */
+  color: #ecf2f8;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  cursor: pointer;
+  transition: all 200ms ease 50ms;
+}
+.icon--primary {
+  color: #48556a;
+}
+.icon--primary:active, .icon--primary:hover {
+  color: #ecf2f8;
+}
+.icon--big {
+  width: 2rem;
+  height: 2rem;
+}
+.icon--secondary {
+  color: #ecf2f8;
+}
+.icon--secondary:active, .icon--secondary:hover {
+  color: #6d7f97;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+}
+.media__image {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 2rem;
+}
+.media__image > img {
+  border-radius: 50%;
+}
+.media__author {
+  color: #48556a;
+  font-size: inherit;
+}
+.media__date {
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #9eafc2;
+}
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: 0.4fr 0.6fr;
+  }
+}
+.share {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  gap: 2rem;
+  overflow: hidden;
+  transition: all 200ms ease 50ms;
+}
+.share__text {
+  font-size: 1.3rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+.share--primary {
+  background-color: #48556a;
+  color: #9eafc2;
+}
+
+.article {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 50rem;
+  min-width: 30rem;
+  overflow: hidden;
+  width: calc(100% - 4rem);
+}
+.article__image {
+  height: 20rem;
+}
+.article__image > img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  width: 100%;
+}
+.article__body {
+  padding: 4rem 3rem 1rem;
+}
+.article__title {
+  color: #48556a;
+  margin-bottom: 1.5rem;
+}
+.article__text {
+  color: #6d7f97;
+  margin-bottom: 3.2rem;
+}
+.article__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.article .article__body {
+  position: relative;
+}
+.article .share {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0rem;
+  width: 100%;
+  opacity: 0;
+}
+.article .share::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background-color: inherit;
+  position: absolute;
+  left: 53%;
+  top: 95%;
+  transform: rotate(45deg) translate(-50%, -25%) scale(0);
+  transform-origin: left top;
+  opacity: 0;
+  transition: all 200ms ease 50ms;
+}
+.article.active .share {
+  height: 6.4rem;
+  opacity: 1;
+}
+.article.active #trigger {
+  z-index: 999;
+}
+.article.active .icon-container--primary {
+  background-color: #6d7f97;
+}
+.article.active .icon--primary {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .article {
+    max-width: 768px;
+    overflow: visible;
+  }
+  .article__image {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+  }
+  .article__title {
+    font-size: 2rem;
+  }
+  .article__text {
+    letter-spacing: 0;
+  }
+  .article .share {
+    width: auto;
+    border-radius: 10px;
+    left: 60%;
+    bottom: 6.5rem;
+    overflow: visible;
+  }
+  .article.active .share::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(-50%, -25%) scale(1);
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
