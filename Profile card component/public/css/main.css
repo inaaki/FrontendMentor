@@ -1,0 +1,111 @@
+:root {
+  overflow: hidden;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.8rem/1.5 " Kumbh Sans ", sans-serif;
+  min-height: 100vh;
+  background-color: #19a2ae;
+  color: #6a6f81;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bghost {
+  position: relative;
+}
+.bghost__top {
+  position: absolute;
+  right: 50%;
+  bottom: 42%;
+}
+.bghost__bottom {
+  position: absolute;
+  left: 53%;
+  top: 42%;
+}
+
+h1,
+h2 {
+  font-size: 1.8rem;
+  color: #2d3248;
+}
+
+.profile {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 1px #6a6f81;
+  margin: auto;
+  min-width: 35rem;
+  overflow: hidden;
+  padding: 15rem 0 0;
+  position: relative;
+}
+.profile__banner {
+  position: absolute;
+  top: 0;
+}
+.profile__data {
+  margin-top: -1rem;
+  position: relative;
+  padding: 1px;
+  /* margin collapse fix */
+  text-align: center;
+  border-bottom: 1px solid #6a6f81;
+}
+.profile__image {
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 0 1px white;
+  /*border round smoothness*/
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.profile__image > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.profile__title {
+  margin-top: 6rem;
+  font-size: inherit;
+  text-transform: capitalize;
+}
+.profile__age {
+  font-weight: 400;
+  color: #969696;
+}
+.profile__city {
+  font-size: 1.5rem;
+  margin: 0 0 1em;
+}
+.profile__stats {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.profile__counts {
+  text-transform: uppercase;
+  font-size: inherit;
+}
+.profile__category {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */
