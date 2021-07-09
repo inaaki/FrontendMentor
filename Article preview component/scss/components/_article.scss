@@ -1,0 +1,119 @@
+@use '../abstracts/index' as *;
+
+.article {
+  background-color: $color-whitey;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 50rem;
+  min-width: 30rem;
+  overflow: hidden;
+  width: calc(100% - 4rem);
+
+  &__image {
+    height: 20rem;
+    > img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    padding: 4rem 3rem 1rem;
+  }
+
+  &__title {
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    color: $color-secondary;
+    margin-bottom: 3.2rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  //out of bem convention
+  //share component inside article component
+  .article__body {
+    position: relative;
+  }
+  .share {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0rem;
+    width: 100%;
+    opacity: 0;
+
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: inherit;
+      position: absolute;
+      left: 53%;
+      top: 95%;
+      transform: rotate(45deg) translate(-50%, -25%) scale(0);
+      transform-origin: left top;
+      opacity: 0;
+      @include mix-transition;
+    }
+  }
+  &.active {
+    .share {
+      height: 6.4rem;
+      opacity: 1;
+    }
+    #trigger {
+      z-index: 999;
+    }
+    .icon-container--primary {
+      background-color: $color-secondary;
+    }
+    .icon--primary {
+      color: $color-whitey;
+    }
+  }
+}
+
+@include mix-media(min, 768px) {
+  .article {
+    max-width: 768px;
+    overflow: visible;
+
+    &__image {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 10px 0 0 10px;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+    &__text {
+      letter-spacing: 0;
+    }
+
+    //media for share component inside article component
+    .share {
+      width: auto;
+      border-radius: 10px;
+      left: 60%;
+      bottom: 6.5rem;
+      overflow: visible;
+    }
+    &.active{
+      .share::after{
+        opacity: 1;
+      transform: rotate(45deg) translate(-50%, -25%) scale(1);
+      }
+    }
+  }
+}

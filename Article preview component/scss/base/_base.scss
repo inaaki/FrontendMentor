@@ -1,0 +1,13 @@
+@use '../abstracts/index' as *;
+
+body {
+  font: 1.3rem $font-primary;
+  line-height: 1.5;
+  background-color: $color-fourth;
+  @include mix-center;
+}
+
+h1,
+h2 {
+  font-size: 1.6rem;
+}

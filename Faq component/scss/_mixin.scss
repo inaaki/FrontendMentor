@@ -1,0 +1,13 @@
+@mixin test {
+  border: 2px solid red;
+}
+
+@mixin transition($type: all) {
+  transition: $type 200ms linear;
+}
+
+@mixin media($value: 768px) {
+  @media screen and (min-width: $value) {
+    @content;
+  }
+}

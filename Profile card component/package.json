@@ -1,0 +1,16 @@
+{
+  "name": "profile-card-component",
+  "version": "1.0.0",
+  "description": "Design preview for the Profile card component coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass scss/main.scss public/css/main.css --watch",
+    "build": "sass scss/main.scss public/css/main.css"
+  },
+  "keywords": [],
+  "author": "Inzamul Akib",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.35.1"
+  }
+}

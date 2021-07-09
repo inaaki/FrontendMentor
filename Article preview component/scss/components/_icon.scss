@@ -1,0 +1,55 @@
+@use '../abstracts/index' as *;
+
+.icon-container {
+  display: inline-grid;
+  place-content: center;
+  border-radius: 50%;
+  padding: 0.8rem;
+  cursor: pointer;
+  @include mix-transition;
+
+  &--primary {
+    background-color: $color-fourth;
+
+    &:hover,
+    &:active {
+      /* :active for touch interaction */
+      background-color: $color-primary;
+      .icon--primary {
+        /* :active for touch interaction */
+        color: $color-fourth;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  cursor: pointer;
+  @include mix-transition;
+
+  &--primary {
+    color: $color-primary;
+
+    &:active,
+    &:hover {
+      color: $color-fourth;
+    }
+  }
+
+  &--big {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &--secondary {
+    color: $color-fourth;
+
+    &:active,
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}

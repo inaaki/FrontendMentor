@@ -1,0 +1,21 @@
+@use 'colors' as *;
+
+$font-kumbhSans: "Kumbh Sans", sans-serif;
+$line-height--m: 1.5;
+$font-size--s: 1.4rem; //If, 1rem==10px
+$font-size--xs: 1.2rem; //If, 1rem==10px
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font: $font-size--xs/#{$line-height--m} $font-kumbhSans;
+}
+h2 {
+  font-weight: 400;
+  font-size: $font-size--s;
+}
+h1{
+  font-size: 3.2rem;
+}

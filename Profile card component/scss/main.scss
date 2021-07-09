@@ -1,0 +1,118 @@
+@use 'colors' as color;
+@use "fonts" as font;
+
+:root {
+  overflow: hidden;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.8rem/1.5 font.$body;
+  min-height: 100vh;
+  background-color: color.$accent;
+  color: color.$secondary;
+  display: grid;
+  place-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+.bghost {
+  position: relative;
+  &__top {
+    position: absolute;
+    right: 50%;
+    bottom: 42%;
+  }
+  &__bottom {
+    position: absolute;
+    left: 53%;
+    top: 42%;
+  }
+}
+
+h1,
+h2 {
+  font-size: 1.8rem;
+  color: color.$primary;
+}
+
+.profile {
+  background-color: color.$white;
+  border-radius: 10px;
+  box-shadow: 0 0 1px color.$secondary;
+  margin: auto;
+  min-width: 35rem;
+  overflow: hidden;
+  padding: 15rem 0 0;
+  position: relative;
+
+  &__banner {
+    position: absolute;
+    top: 0;
+  }
+
+  &__data {
+    margin-top: -1rem;
+    position: relative;
+    padding: 1px; /* margin collapse fix */
+    text-align: center;
+    border-bottom: 1px solid color.$secondary;
+  }
+
+  &__image {
+    border-radius: 50%;
+    border: 5px solid color.$white;
+    box-shadow: 0 0 1px color.$white; /*border round smoothness*/
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-top: 6rem;
+    font-size: inherit;
+    text-transform: capitalize;
+  }
+
+  &__age {
+    font-weight: 400;
+    color: color.$gray;
+  }
+
+  &__city {
+    font-size: 1.5rem;
+    margin: 0 0 1em;
+  }
+
+  &__stats {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  &__counts {
+    text-transform: uppercase;font-size: inherit;
+  }
+
+  &__category {
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 1rem;
+  }
+}

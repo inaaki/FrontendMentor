@@ -1,0 +1,121 @@
+:root {
+  /* colors */
+  --color-primary: hsl(0, 0%, 95%);
+  --color-secondary: hsla(0, 0%, 100%, 0.75);
+  --color-card__starter: hsl(31, 77%, 52%);
+  --color-card__medium: hsl(184, 100%, 22%);
+  --color-card__pro: hsl(179, 100%, 13%);
+  /* fonts */
+  --font-lexendDeca: "Lexend Deca", sans-serif;
+  --font-bigShoulder: "Big Shoulders Display", cursive;
+}
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  font: 1.5rem/1.6 var(--font-lexendDeca);
+  min-height: 100vh;
+  place-content: center;
+}
+
+.icon {
+  display: block;
+  height: 5rem;
+  width: 7rem;
+}
+
+.card {
+  color: var(--color-primary);
+  padding: 4.6rem;
+}
+
+.card--starter {
+  background: var(--color-card__starter);
+}
+.card--starter .btn:hover {
+  color: var(--color-card__starter);
+}
+
+.card--medium {
+  background: var(--color-card__medium);
+}
+.card--medium .btn:hover {
+  color: var(--color-card__medium);
+}
+
+.card--pro {
+  background: var(--color-card__pro);
+}
+.card--pro .btn:hover {
+  color: var(--color-card__pro);
+}
+
+.card__heading {
+  margin: 3em 0 2em;
+}
+
+.card__icon {
+  display: block;
+}
+
+.card__title {
+  font-family: var(--font-bigShoulder);
+  font-size: 4.2rem;
+  line-height: 1;
+  margin: 0 0 3rem;
+  text-transform: uppercase;
+}
+
+.card__text {
+  color: var(--color-secondary);
+}
+
+.btn {
+  background: transparent;
+  border-radius: 999rem;
+  border: 2px solid var(--color-primary);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  outline: 0;
+  padding: 1.5rem 3rem;
+  text-transform: capitalize;
+  transition: all 200ms ease;
+  user-select: none;
+}
+.btn:hover {
+  background: var(--color-primary);
+}
+
+.card-container {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 5em auto;
+  max-width: 1040px;
+  overflow: hidden;
+  width: calc(100% - 6rem);
+}
+
+@media (min-width: 900px) {
+  .card-container {
+    flex-direction: row;
+  }
+  .card__heading {
+    margin-bottom: 10rem;
+  }
+}
+@media (max-width: 900px) {
+  .card-container {
+    max-width: 48rem;
+  }
+}

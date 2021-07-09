@@ -1,0 +1,23 @@
+@use '../abstracts/index' as *;
+
+.media {
+  display: flex;
+  align-items: center;
+  &__image {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 2rem;
+    > img {
+      @include mix-circle;
+    }
+  }
+  &__author {
+    color: $color-primary;
+    font-size: inherit;
+  }
+  &__date {
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: $color-tertiary;
+  }
+}

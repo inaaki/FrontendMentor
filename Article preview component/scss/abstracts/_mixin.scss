@@ -1,0 +1,22 @@
+@mixin border($value: 2px) {
+  border: $value solid tomato;
+} //for dev purposes **didn't use in production**
+
+@mixin transition($p: all, $t: 200ms, $f: ease, $d: 50ms) {
+  transition: $p $t $f $d;
+}
+
+@mixin circle {
+  border-radius: 50%;
+}
+
+@mixin media($type: min, $value: 768px) {
+  @media screen and (#{$type}-width: $value) {
+    @content;
+  }
+}
+
+@mixin center {
+  display: grid;
+  place-content: center;
+}

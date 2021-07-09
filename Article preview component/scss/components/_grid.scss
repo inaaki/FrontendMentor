@@ -1,0 +1,12 @@
+@use '../abstracts/index' as *;
+
+
+.grid {
+  display: grid;
+}
+
+@include mix-media {
+  .grid--1x2 {
+    grid-template-columns: .4fr .6fr;
+  }
+}

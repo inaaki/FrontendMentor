@@ -1,0 +1,24 @@
+@use '../abstracts/index' as *;
+
+.share {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  gap: 2rem;
+  overflow: hidden;
+  @include mix-transition;
+
+  &__text {
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-tertiary;
+  }
+}

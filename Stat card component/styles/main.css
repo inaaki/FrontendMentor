@@ -1,0 +1,149 @@
+/* variables */
+:root {
+  /* color */
+  --c-primary: hsl(244, 38%, 16%);
+  --c-secondary: hsl(233, 47%, 7%);
+  --c-accent: hsl(277, 64%, 61%);
+  --c-accent-ts: hsla(277, 90%, 31.5%, 0.6);
+  --c-head: hsl(0, 0%, 100%);
+  --c-para: hsla(0, 0%, 100%, 0.75);
+  --c-stat: hsla(0, 0%, 100%, 0.6);
+  /* font */
+  --f-inter: "Inter", sans-serif;
+  --f-lexendDeca: "Lexend Deca", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--c-secondary);
+  display: grid;
+  font-family: var(--f-inter);
+  font-size: 1.5rem;
+  min-height: 100vh;
+  place-content: center;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+h2 {
+  font-size: 3rem;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3.6rem;
+  }
+}
+
+.heading {
+  color: var(--c-head);
+  margin: 4rem 0;
+  text-align: center;
+}
+.heading .highlight {
+  color: var(--c-accent);
+}
+.heading > p {
+  color: var(--c-para);
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .heading {
+    margin: 0 0 6rem;
+    text-align: start;
+  }
+}
+
+img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.stats {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.stats__items {
+  margin: 3rem 0;
+  text-align: center;
+}
+.stats__items .count {
+  color: var(--c-head);
+  font-size: 3rem;
+  font-weight: 700;
+}
+.count--capital {
+  text-transform: uppercase;
+}
+
+.stats__items .title {
+  color: var(--c-stat);
+  display: inline-block;
+  letter-spacing: 1px;
+  margin-top: 0.5em;
+  text-transform: uppercase;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .stats {
+    flex-flow: row nowrap;
+  }
+  .stats__items {
+    margin: 0;
+  }
+}
+.card {
+  background: var(--c-primary);
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 4rem auto;
+  overflow: hidden;
+  width: min(
+    calc(100% - 5rem),
+    1140px
+  ); /* equavalent to width:calc(100% - 4rem) and max-width: 1140px; */
+}
+.card__image {
+  position: relative;
+}
+.card__image::after {
+  background: var(--c-accent-ts);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.card__text {
+  display: grid;
+  padding: 4rem;
+  place-content: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-flow: row-reverse nowrap;
+    margin: auto;
+  }
+  .card > * {
+    flex: 1 1 50%;
+  }
+  .card__text {
+    padding: 8rem;
+  }
+}
