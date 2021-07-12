@@ -1,0 +1,329 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font: 1.4rem/1.6 "Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4.8rem;
+  }
+}
+
+h2 {
+  font-size: inherit;
+}
+
+.quote::before {
+  content: open-quote;
+}
+.quote::after {
+  content: close-quote;
+}
+
+.card {
+  margin: 2rem;
+  border-radius: 10px;
+}
+
+.header {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    text-align: start;
+    padding: 0;
+  }
+}
+.header__title {
+  color: #502050;
+  line-height: 1;
+  margin-bottom: 3rem;
+}
+.header__subtitle {
+  color: #937b92;
+  font-weight: 500;
+}
+
+.rating {
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+@media screen and (min-width: 768px) {
+  .rating {
+    flex-flow: row;
+    padding: 2rem 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .rating {
+    justify-content: start;
+  }
+}
+.rating--primary {
+  background-color: #f7f2f7;
+}
+.rating--primary .rating__text {
+  color: #502050;
+}
+.rating__icon {
+  display: flex;
+  margin: 0 2.5rem;
+  flex: 0 0 auto;
+}
+.rating__icon > img {
+  margin: 0 0.4rem;
+}
+.rating__text {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .rating__text {
+    margin: 0;
+  }
+}
+
+.media {
+  display: flex;
+  align-items: center;
+}
+.media__image {
+  margin-right: 2.2rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: none;
+}
+.media--primary {
+  background-color: #502050;
+}
+.media--primary .media__title {
+  color: #f7f2f7;
+}
+.media--primary .media__subtitle {
+  color: #ee68a4;
+}
+
+.feedback {
+  padding: 3rem;
+}
+.feedback__author {
+  margin-bottom: 2rem;
+}
+.feedback--primary {
+  background-color: #502050;
+}
+.feedback--primary .feedback__text {
+  color: #f7f2f7;
+}
+
+.proof {
+  background-color: white;
+  padding: 8rem 2.5rem;
+  max-width: 375px;
+}
+@media screen and (min-width: 768px) {
+  .proof {
+    max-width: 1440px;
+    padding: 10rem 6rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .proof {
+    padding: 14rem 16rem;
+  }
+}
+.proof__header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 1200px) {
+  .proof__header {
+    flex-direction: row;
+  }
+}
+.proof__heading {
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 768px) {
+  .proof__heading {
+    flex: 0 1 40%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .proof__heading {
+    margin-bottom: 0;
+  }
+}
+.proof__rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .proof__rating {
+    align-items: center;
+    flex: 1 0 60%;
+  }
+  .proof__rating > :nth-last-child(2) {
+    margin-right: 5rem;
+  }
+  .proof__rating > :nth-last-child(3) {
+    margin-right: 10rem;
+  }
+  .proof__rating > * {
+    max-width: 570px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .proof__rating {
+    align-items: flex-end;
+  }
+  .proof__rating > * {
+    max-width: 430px;
+  }
+}
+.proof__rating > * {
+  width: 100%;
+  flex: 0 1;
+  margin: 0.8rem 0;
+}
+@media screen and (min-width: 768px) {
+  .proof__footer {
+    display: flex;
+    margin-top: 6rem;
+  }
+}
+.proof__footer .feedback {
+  margin: 2rem 0;
+}
+@media screen and (min-width: 768px) {
+  .proof__footer .feedback {
+    margin: 0 3rem 0 0;
+  }
+  .proof__footer .feedback:last-child {
+    margin-right: 0;
+  }
+  .proof__footer .feedback:nth-child(2) {
+    margin-top: 1.5rem;
+  }
+  .proof__footer .feedback:nth-child(3) {
+    margin-top: 3rem;
+  }
+}
+.proof-container {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  width: 100%;
+}
+
+.bg {
+  position: relative;
+}
+.bg__left, .bg__right {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bg__right {
+  top: initial;
+  left: initial;
+  right: 0;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
