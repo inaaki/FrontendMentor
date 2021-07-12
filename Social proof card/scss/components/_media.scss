@@ -1,0 +1,26 @@
+@use '../utils/utilities' as *;
+
+$image-width: 4.2rem;
+
+.media {
+  display: flex;
+  align-items: center;
+  &__image {
+    margin-right: 2.2rem;
+    width: $image-width;
+    height: $image-width;
+    border-radius: 50%;
+    overflow: hidden;
+    flex: none;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+  }
+  &--primary &__title {
+    color: $color-tertiary;
+  }
+  &--primary &__subtitle {
+    color: $color-accent;
+  }
+}

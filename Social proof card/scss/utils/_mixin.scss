@@ -1,0 +1,6 @@
+//place all project based mixin here
+@mixin media($value: 768px) {
+  @media screen and (min-width: $value) {
+    @content;
+  }
+}

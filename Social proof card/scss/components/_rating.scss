@@ -1,0 +1,42 @@
+@use '../utils/utilities' as *;
+$mob-gap: 1.5rem;
+$desk-gap: 2rem;
+
+.rating {
+  margin: 2rem 0;
+  padding: $mob-gap 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  @include mix-media {
+    flex-flow: row;
+    padding: $desk-gap 0;
+  }
+  @include mix-media(1200px){
+    justify-content: start;
+  }
+  &--primary {
+    background-color: $color-tertiary;
+  }
+  &--primary &__text {
+    color: $color-primary;
+  }
+  &__icon {
+    display: flex;
+    margin: 0 2.5rem;
+    flex: 0 0 auto;
+    & > img {
+      margin: 0 0.4rem;
+    }
+  }
+  &__text {
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-top: $mob-gap;
+    @include mix-media {
+      margin: 0;
+    }
+  }
+}

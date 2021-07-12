@@ -1,0 +1,12 @@
+.quote {
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+.card {
+  margin: 2rem;
+  border-radius: 10px;
+}

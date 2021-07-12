@@ -1,0 +1,121 @@
+@use '../utils/utilities' as *;
+
+//margin gap between==>
+//1.proof__heading and proof__rating
+//1.proof__header and proof__footer
+$gap-between: 4rem;
+
+.proof {
+  background-color: $color-whitey;
+  padding: 8rem 2.5rem;
+  max-width: 375px;
+  @include mix-media {
+    max-width: 1440px;
+    padding: 10rem 6rem;
+  }
+  @include mix-media(1200px) {
+    padding: 14rem 16rem;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $gap-between;
+
+    @include mix-media(1200px) {
+      flex-direction: row;
+    }
+  }
+  &__heading {
+    margin-bottom: $gap-between;
+    @include mix-media {
+      flex: 0 1 40%;
+    }
+    @include mix-media(1200px) {
+      margin-bottom: 0;
+    }
+  }
+  &__rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mix-media {
+      align-items: center;
+      flex: 1 0 60%;
+
+      $margin: 5rem; //looping variable
+      //loop for changing 2nd and 3rd element right margin changing, double from previous one
+      @for $i from 0 through 2 {
+        @if $i > 0 {
+          & > :nth-last-child(#{$i + 1}) {
+            margin-right: $i * $margin;
+          }
+        }
+      }
+      & > * {
+        max-width: 570px;
+      }
+    }
+    @include mix-media(1200px) {
+      align-items: flex-end;
+      & > * {
+        max-width: 430px;
+      }
+    }
+    & > * {
+      width: 100%;
+      flex: 0 1;
+      margin: 0.8rem 0;
+    }
+  }
+  &__footer {
+    @include mix-media {
+      display: flex;
+      margin-top: 6rem;
+    }
+    .feedback {
+      margin: 2rem 0;
+      @include mix-media {
+        margin: 0 3rem 0 0;
+        &:last-child {
+          margin-right: 0;
+        }
+
+        $relative-margin: 1.5rem; //looping margin variable
+        //loop for changing 2nd and 3rd element top margin changing, double from previous one
+        @for $i from 0 through 2 {
+          @if $i > 0 {
+            &:nth-child(#{$i + 1}) {
+              margin-top: $i * $relative-margin;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-container {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    width: 100%;
+  }
+}
+
+.bg {
+  position: relative;
+  &__left {
+    position: absolute;
+    // width: max-content;
+    // height: max-content;
+    top: 0;
+    left: 0;
+  }
+  &__right {
+    @extend .bg__left;
+    top: initial;
+    left: initial;
+    right: 0;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,21 @@
+@use '../utils/utilities' as *;
+
+.header {
+  text-align: center;
+  @include mix-media {
+    padding: 0 4rem;
+  }
+  @include mix-media(1200px) {
+    text-align: start;
+    padding: 0;
+  }
+  &__title {
+    color: $color-primary;
+    line-height: 1;
+    margin-bottom: 3rem;
+  }
+  &__subtitle {
+    color: $color-secondary;
+    font-weight: 500;
+  }
+}

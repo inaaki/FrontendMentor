@@ -1,0 +1,16 @@
+@use '../utils/utilities' as *;
+
+.feedback{
+    padding: 3rem;
+    &__author{
+        margin-bottom: 2rem;
+    }
+    &--primary{
+        background-color: $color-primary;
+        
+    }
+    $a:&;
+    &--primary &__text{
+        color: $color-tertiary;
+    }
+}
