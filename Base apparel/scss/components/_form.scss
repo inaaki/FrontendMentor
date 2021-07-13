@@ -1,0 +1,85 @@
+@use '../utils/utilities' as *;
+
+//width-height based on button size
+$height-desk: 5.5rem;
+$height-mobile: 4.6rem;
+$width-desk: 10rem;
+$width-mobile: 6.5rem;
+//input padding left and right
+$padding-lr: 2.5rem;
+//on hover gradient for button
+$hover-grad: linear-gradient(to right,hsl(0, 89%, 93%),hsl(1, 74%, 88%));
+
+.form {
+  position: relative;
+  &__email {
+    border-radius: 10rem;
+    border: 1px solid $color-accent;
+    height: $height-mobile;
+    line-height: 1;
+    outline: 0;
+    padding-left: $padding-lr;
+    padding-right: $padding-lr + $width-mobile;
+    width: 100%;
+    outline: 1px solid transparent;
+    @include mix-media {
+      height: $height-desk;
+      padding-right: $padding-lr + $width-desk;
+    }
+  }
+  &__btn {
+    background: $color-grad_two;
+    border-radius: 10rem;
+    border: 0;
+    bottom: 0;
+    cursor: pointer;
+    display: grid;
+    outline: 0;
+    place-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    white-space: nowrap;
+    width: $width-mobile;
+    box-shadow: 0 1rem 2rem 0 hsl(0, 41%, 82%);
+    @include mix-media {
+      width: $width-desk;
+    }
+    &:hover {
+      background: $hover-grad;
+      box-shadow: 0 1.5rem 3rem 0 hsl(0, 32%, 74%);
+    }
+  }
+  &__error-msg {
+    display: none;
+    color: $color-accent;
+    position: absolute;
+    top: 110%;
+    left: $padding-lr;
+  }
+  &__error-icon {
+    display: none;
+    position: absolute;
+    right: $width-mobile + 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    @include mix-media {
+      right: $width-desk + 1rem;
+    }
+  }
+
+  //invalid email css (add error class via js)
+  &.error {
+    .form {
+      &__email {
+        outline-color: $color-accent;
+      }
+      &__error-msg {
+        display: block;
+      }
+      &__error-icon {
+        display: block;
+      }
+    }
+  }
+}

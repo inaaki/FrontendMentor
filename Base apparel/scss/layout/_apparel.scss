@@ -1,0 +1,76 @@
+@use '../utils/utilities' as *;
+
+$logo-top: 6.5rem;
+$pad-lr: 16rem;
+$pad-tb: 14.5rem;
+
+//padding difference between media screen 1140px and 769px
+$gap: 8rem;
+//^^^^^^^
+
+.apparel {
+  background: $color-grad_one no-repeat;
+  max-width: 575px;
+  width: 100%;
+  display: grid;
+  grid-template:
+    "header"
+    "aside"
+    "main";
+  @include mix-media {
+    max-width: 1440px;
+    grid-template:
+      "header aside"
+      "main aside"/60% 40%;
+    background: url("/images/bg-pattern-desktop.svg") no-repeat,
+      $color-grad_one no-repeat;
+    background-size: 60% 100%, auto;
+  }
+  &__logo {
+    padding: 3rem;
+    grid-area: header;
+    @include mix-media {
+      padding: $logo-top 0 0 ($pad-lr - $gap);
+    }
+    @include mix-media(1140px) {
+      padding: $logo-top 0 0 $pad-lr;
+    }
+
+    > img {
+      height: 2.2rem;
+      @include mix-media {
+        height: 3.2rem;
+      }
+    }
+  }
+  &__image {
+    grid-area: aside;
+
+    > picture {
+      height: 100%;
+      > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &__main {
+    grid-area: main;
+    padding: 6.5rem 3rem 9rem;
+    @include mix-media {
+      padding: ($pad-tb - $gap) ($pad-lr - $gap);
+    }
+    @include mix-media(1140px) {
+      padding: $pad-tb $pad-lr;
+    }
+  }
+  &__heading {
+    margin-bottom: 3.5rem;
+    > h1 {
+      @include mix-media {
+        line-height: 1.2;
+      }
+    }
+  }
+}

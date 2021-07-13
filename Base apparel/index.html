@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="public/css/main.css" />
+
+    <script src="/public/js/validate.js" defer></script>
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+</head>
+
+<body>
+    <div class="apparel">
+        <header class="apparel__logo">
+            <img src="/images/logo.svg" alt="" />
+        </header>
+        <div class="apparel__image">
+            <picture>
+                <source media="(min-width:769px)" srcset="/images/hero-desktop.jpg" />
+                <img src="/images/hero-mobile.jpg" alt="" />
+            </picture>
+        </div>
+        <div class="apparel__main">
+            <div class="heading apparel__heading">
+                <h1 class="heading__title">
+                    <span>we're</span> <br />
+                    coming <br />
+                    soon
+                </h1>
+                <p class="heading__subtitle">
+                    Hello fellow shoppers! We're currently building our new fashion
+                    store. Add your email below to stay up-to-date with announcements
+                    and our launch deals.
+                </p>
+            </div>
+            <form action="" class="form">
+                <input type="email" id="email" name="email" class="form__email" placeholder="Email address" />
+                <button id='trigger' class="form__btn" type="submit">
+                    <img src="/images/icon-arrow.svg" alt="" />
+                </button>
+                <img src="/images/icon-error.svg" alt="" class="form__error-icon" />
+                <span class="form__error-msg">Please provide a valid email</span>
+            </form>
+        </div>
+    </div>
+
+    <!-- Email Address -->
+</body>
+
+</html>

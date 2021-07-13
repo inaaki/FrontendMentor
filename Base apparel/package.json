@@ -1,0 +1,16 @@
+{
+  "name": "base-apparel-coming-soon-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Base Apparel coming soon page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch scss/main.scss:public/css/main.css",
+    "build": "sass  scss/main.scss:public/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.35.2"
+  }
+}

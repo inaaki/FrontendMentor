@@ -1,0 +1,262 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  display: grid;
+  place-content: center;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Josefin Sans";
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 769px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+h1 {
+  font-size: 4.2rem;
+}
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 6.2rem;
+  }
+}
+
+.heading {
+  text-align: center;
+}
+@media screen and (min-width: 769px) {
+  .heading {
+    text-align: start;
+  }
+}
+.heading__title {
+  color: #413a3a;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1rem;
+  margin-bottom: 2rem;
+}
+.heading__title > span {
+  color: #ce9797;
+  font-weight: 300;
+}
+.heading__subtitle {
+  color: #ce9797;
+}
+
+.form {
+  position: relative;
+}
+.form__email {
+  border-radius: 10rem;
+  border: 1px solid #f96262;
+  height: 4.6rem;
+  line-height: 1;
+  outline: 0;
+  padding-left: 2.5rem;
+  padding-right: 9rem;
+  width: 100%;
+  outline: 1px solid transparent;
+}
+@media screen and (min-width: 769px) {
+  .form__email {
+    height: 5.5rem;
+    padding-right: 12.5rem;
+  }
+}
+.form__btn {
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  border-radius: 10rem;
+  border: 0;
+  bottom: 0;
+  cursor: pointer;
+  display: grid;
+  outline: 0;
+  place-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+  width: 6.5rem;
+  box-shadow: 0 1rem 2rem 0 #e4bebe;
+}
+@media screen and (min-width: 769px) {
+  .form__btn {
+    width: 10rem;
+  }
+}
+.form__btn:hover {
+  background: linear-gradient(to right, #fddddd, #f7cbca);
+  box-shadow: 0 1.5rem 3rem 0 #d2a7a7;
+}
+.form__error-msg {
+  display: none;
+  color: #f96262;
+  position: absolute;
+  top: 110%;
+  left: 2.5rem;
+}
+.form__error-icon {
+  display: none;
+  position: absolute;
+  right: 7.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 769px) {
+  .form__error-icon {
+    right: 11rem;
+  }
+}
+.form.error .form__email {
+  outline-color: #f96262;
+}
+.form.error .form__error-msg {
+  display: block;
+}
+.form.error .form__error-icon {
+  display: block;
+}
+
+.apparel {
+  background: linear-gradient(135deg, white, #fff5f5) no-repeat;
+  max-width: 575px;
+  width: 100%;
+  display: grid;
+  grid-template: "header" "aside" "main";
+}
+@media screen and (min-width: 769px) {
+  .apparel {
+    max-width: 1440px;
+    grid-template: "header aside" "main aside"/60% 40%;
+    background: url("/images/bg-pattern-desktop.svg") no-repeat, linear-gradient(135deg, white, #fff5f5) no-repeat;
+    background-size: 60% 100%, auto;
+  }
+}
+.apparel__logo {
+  padding: 3rem;
+  grid-area: header;
+}
+@media screen and (min-width: 769px) {
+  .apparel__logo {
+    padding: 6.5rem 0 0 8rem;
+  }
+}
+@media screen and (min-width: 1140px) {
+  .apparel__logo {
+    padding: 6.5rem 0 0 16rem;
+  }
+}
+.apparel__logo > img {
+  height: 2.2rem;
+}
+@media screen and (min-width: 769px) {
+  .apparel__logo > img {
+    height: 3.2rem;
+  }
+}
+.apparel__image {
+  grid-area: aside;
+}
+.apparel__image > picture {
+  height: 100%;
+}
+.apparel__image > picture > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.apparel__main {
+  grid-area: main;
+  padding: 6.5rem 3rem 9rem;
+}
+@media screen and (min-width: 769px) {
+  .apparel__main {
+    padding: 6.5rem 8rem;
+  }
+}
+@media screen and (min-width: 1140px) {
+  .apparel__main {
+    padding: 14.5rem 16rem;
+  }
+}
+.apparel__heading {
+  margin-bottom: 3.5rem;
+}
+@media screen and (min-width: 769px) {
+  .apparel__heading > h1 {
+    line-height: 1.2;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

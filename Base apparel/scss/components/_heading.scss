@@ -1,0 +1,24 @@
+@use '../utils/utilities' as *;
+
+.heading{
+    text-align: center;
+    @include mix-media{
+        text-align: start;
+    }
+    &__title{
+        color: $color-secondary;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 1rem;
+        margin-bottom: 2rem;
+        
+        >span{
+            color: $color-primary;
+            font-weight: 300;
+        }
+    }
+    &__subtitle{
+        color: $color-primary;
+    }
+}

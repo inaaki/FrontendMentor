@@ -1,0 +1,10 @@
+//1.base files
+@use 'base/reset';
+@use 'base/base';
+@use 'base/typography';
+
+//3.all components
+@use 'components/heading';
+@use 'components/form';
+
+@use 'layout/apparel';
