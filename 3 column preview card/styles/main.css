@@ -101,7 +101,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 5em auto;
-  max-width: 1040px;
+  max-width: 48rem;
   overflow: hidden;
   width: calc(100% - 6rem);
 }
@@ -109,13 +109,9 @@ body {
 @media (min-width: 900px) {
   .card-container {
     flex-direction: row;
+    max-width: 1040px;
   }
   .card__heading {
     margin-bottom: 10rem;
-  }
-}
-@media (max-width: 900px) {
-  .card-container {
-    max-width: 48rem;
   }
 }
