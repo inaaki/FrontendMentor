@@ -199,7 +199,7 @@ h1 {
   .apparel {
     max-width: 1440px;
     grid-template: "header aside" "main aside"/60% 40%;
-    background: url("./images/bg-pattern-desktop.svg") no-repeat, linear-gradient(135deg, white, #fff5f5) no-repeat;
+    background: url("../../images/bg-pattern-desktop.svg") no-repeat, linear-gradient(135deg, white, #fff5f5) no-repeat;
     background-size: 60% 100%, auto;
   }
 }

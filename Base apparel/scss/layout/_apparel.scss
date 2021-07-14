@@ -22,7 +22,7 @@ $gap: 8rem;
     grid-template:
       "header aside"
       "main aside"/60% 40%;
-    background: url("./images/bg-pattern-desktop.svg") no-repeat,
+    background: url("../../images/bg-pattern-desktop.svg") no-repeat,
       $color-grad_one no-repeat;
     background-size: 60% 100%, auto;
   }
