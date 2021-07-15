@@ -211,8 +211,8 @@ h2 {
 
 .proof {
   background-color: white;
-  padding: 8rem 2.5rem;
   max-width: 375px;
+  padding: 8rem 2.5rem;
 }
 @media screen and (min-width: 768px) {
   .proof {
@@ -277,14 +277,19 @@ h2 {
   }
 }
 .proof__rating > * {
-  width: 100%;
   flex: 0 1;
   margin: 0.8rem 0;
+  width: 100%;
+}
+.proof__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 @media screen and (min-width: 768px) {
   .proof__footer {
-    display: flex;
     margin-top: 6rem;
+    flex-direction: row;
   }
 }
 .proof__footer .feedback {
@@ -305,8 +310,8 @@ h2 {
   }
 }
 .proof-container {
-  min-height: 100vh;
   display: grid;
+  min-height: 100vh;
   place-content: center;
   width: 100%;
 }
@@ -315,15 +320,15 @@ h2 {
   position: relative;
 }
 .bg__left, .bg__right {
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
 }
 .bg__right {
-  top: initial;
+  bottom: 0;
   left: initial;
   right: 0;
-  bottom: 0;
+  top: initial;
 }
 
 /*# sourceMappingURL=main.css.map */

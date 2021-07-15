@@ -70,9 +70,12 @@ $gap-between: 4rem;
     }
   }
   &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     @include mix-media {
-      display: flex;
       margin-top: 6rem;
+      flex-direction: row;
     }
     .feedback {
       margin: 2rem 0;
