@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <script src="src/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img src="images/logo.svg" alt="ping">
+        </div>
+    </header>
+    <main class="container">
+        <div class="heading">
+            <h1 class="heading__title">
+                <span>We are launching</span> soon!
+            </h1>
+            <p class="heading__subtitle">
+                Subscribe and get notified
+            </p>
+        </div>
+        <form action="#" class="form ">
+            <div class="form__email" id="victim">
+                <input type="text" class="input input--block" id="email" placeholder="Your email address...">
+
+                <div class="form__error">
+                    <p class="empty">Whoops! It looks like you forgot to add your email</p>
+                    <p class="invalid">Please provide a valid email address</p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn--primary" id="trigger">Notify Me</button>
+        </form>
+        <div class="image">
+            <img src="images/illustration-dashboard.png" alt="">
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__icons">
+            <span class="icon-container icon-container--primary">
+                <ion-icon class="icon icon--primary" name="logo-facebook"></ion-icon>
+            </span>
+            <span class="icon-container icon-container--primary">
+                <ion-icon class="icon icon--primary" name="logo-twitter"></ion-icon>
+            </span>
+            <span class="icon-container icon-container--primary">
+                <ion-icon class="icon icon--primary" name="logo-instagram"></ion-icon>
+            </span>
+        </div>
+        <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+    </footer>
+
+    <!-- ionic icon  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+</body>
+
+</html>

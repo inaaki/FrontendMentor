@@ -1,0 +1,8 @@
+@mixin test {
+  border: 1px solid red;
+}
+@mixin media($value: 768px) {
+  @media screen and (min-width: $value) {
+    @content;
+  }
+}

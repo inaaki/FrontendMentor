@@ -1,0 +1,16 @@
+{
+  "name": "ping-coming-soon-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Ping coming soon page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch scss/main.scss:src/style.css",
+    "build": "sass  scss/main.scss:src/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.36.0"
+  }
+}
