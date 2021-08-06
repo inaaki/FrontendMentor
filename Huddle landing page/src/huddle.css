@@ -1,0 +1,248 @@
+:root {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.6rem/1.5 "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  background-color: #674baf;
+}
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.8rem;
+  }
+}
+
+h1 {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 980px) {
+  h1 {
+    font-size: 3.4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 4.2rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 250ms ease-in;
+}
+a:active {
+  transform: scale(0.9);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border-radius: 99rem;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+  outline: 0;
+  padding: 1rem 8rem;
+  transition: all 250ms ease 50ms;
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    padding: 1.5rem 6rem;
+    font-size: 2rem;
+  }
+}
+.btn--primary {
+  background-color: white;
+  color: #674baf;
+}
+.btn--primary:hover {
+  background-color: #e882e8;
+  color: white;
+}
+
+.icon {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .icon {
+    font-size: 1.8rem;
+  }
+}
+.icon-container {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  display: inline-grid;
+  place-content: center;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .icon-container {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 0.75rem;
+  }
+}
+.icon-container--primary {
+  color: white;
+  border-color: white;
+}
+.icon-container--primary:hover {
+  border-color: #dd45dd;
+  color: #dd45dd;
+}
+
+.header {
+  padding: 2.5rem 4rem;
+}
+.header__logo {
+  max-width: 14rem;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    max-width: 18vmax;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header {
+    justify-self: start;
+    padding: 8rem;
+  }
+}
+
+.content {
+  padding: 0 4rem;
+}
+@media screen and (min-width: 768px) {
+  .content {
+    padding: 0 8rem;
+  }
+}
+.content__image {
+  margin: 5rem 0;
+  overflow: hidden;
+}
+@media screen and (min-width: 980px) {
+  .content__image {
+    justify-self: end;
+  }
+}
+.content__asset {
+  margin: 8rem 0 4rem;
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  padding: 0 5rem;
+}
+@media screen and (min-width: 980px) {
+  .content__asset {
+    max-width: none;
+    justify-items: start;
+    padding: 5rem 0 5rem 6rem;
+    align-self: start;
+    margin: 4rem 0 0;
+    text-align: start;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .content__asset {
+    padding: 5rem 6rem;
+  }
+}
+.content__header {
+  color: white;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .content__header {
+    margin-bottom: 1rem;
+  }
+}
+.content__title {
+  margin: 0 auto 2rem;
+  max-width: 35rem;
+}
+@media screen and (min-width: 980px) {
+  .content__title {
+    max-width: none;
+  }
+}
+.content__subtitle {
+  padding: 0 0 2rem;
+}
+
+.footer {
+  padding: 4rem;
+  font-size: 0;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    justify-self: end;
+    padding: 4rem 8rem;
+  }
+}
+.footer__icon {
+  text-align: center;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  z-index: -10;
+  height: 100%;
+}
+.bg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+}
+@media screen and (min-width: 768px) {
+  .bg > img {
+    width: auto;
+    object-fit: cover;
+  }
+}
+.bg-host {
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+@media screen and (min-width: 980px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+.grid--3x1 {
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  margin: auto;
+  max-width: 144rem;
+}
+
+/*# sourceMappingURL=huddle.css.map */

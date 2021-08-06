@@ -1,0 +1,10 @@
+@mixin media($value: 768px,$type: min) {
+    @media screen and (#{$type}-width: $value) {
+        @content;
+    }
+}
+
+@mixin square($value: max-content) {
+    width: $value;
+    height: $value;
+}
